@@ -1,5 +1,6 @@
 var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
-  makeDancer.call(this, top, left, timeBetweenSteps);
+  makeDancer.apply(this, arguments);
+
 
   // this.step();
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
@@ -17,5 +18,9 @@ makeBlinkyDancer.prototype.step = function() {
   // toggle() is a jQuery method to show/hide the <span> tag.
   // See http://api.jquery.com/category/effects/ for this and
   // other effects you can use on a jQuery-wrapped html tag.
+
+  // get position of a dancer (use jQuery)
+  //
+
   this.$node.toggle();
 };
