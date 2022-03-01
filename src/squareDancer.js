@@ -24,3 +24,9 @@ makeSquareDancer.prototype.step = function() {
     left: '+=50px'
   });
 };
+
+makeSquareDancer.prototype.lineUp = function (top, left) {
+  this.$node.stop(true, true);
+
+  makeDancer.prototype.lineUp.call(this, top, left);
+};

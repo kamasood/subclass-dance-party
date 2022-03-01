@@ -23,13 +23,40 @@ $(document).ready(function() {
     // make a dancer with a random position
 
     var dancer = new dancerMakerFunction(
-      $('body').height() * Math.random(),
-      $('body').width() * Math.random(),
+      $('.danceFloor').height() * Math.random(),
+      $('.danceFloor').width() * Math.random(),
       Math.random() * 1000
     );
-    $('body').append(dancer.$node);
+    $('.danceFloor').append(dancer.$node);
 
     window.dancers.push(dancer);
+  });
+
+  $('.lineUpButton').on('click', () => {
+    Math.TAU = 2 * Math.PI;
+
+    var nonSocials = [];
+    for (let i = 0; i < window.dancers.length; i++) {
+      if (!window.dancers[i].$node.hasClass('social')) {
+        nonSocials.push(window.dancers[i]);
+      }
+    }
+
+    if (nonSocials !== 0) {
+      let n = nonSocials.length;
+      let windowHeight = $('.danceFloor').height();
+      let windowWidth = $('.danceFloor').width();
+      let r = Math.min(windowHeight, windowWidth) * 0.4;
+
+      for (let i = 0; i < n; i++ ) {
+        let theta = (Math.TAU / n) * i;
+
+        let x = (r * Math.cos(theta)) + (windowWidth / 2);
+        let y = (r * Math.sin(theta)) + (windowHeight / 2);
+
+        nonSocials[i].lineUp(y, x);
+      }
+    }
   });
 });
 

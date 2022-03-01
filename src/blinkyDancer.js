@@ -4,6 +4,7 @@ var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
 
   this.$node.addClass('blinky');
 
+  this.$node.hover(this.hover.bind(this), this.unHover.bind(this));
   // this.step();
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
   // so we must keep a copy of the old version of this function
@@ -25,4 +26,12 @@ makeBlinkyDancer.prototype.step = function() {
   //
 
   this.$node.toggle();
+};
+
+makeBlinkyDancer.prototype.hover = function() {
+  this.$node.css('transform', 'scaleX(-1)');
+};
+
+makeBlinkyDancer.prototype.unHover = function() {
+  this.$node.css('transform', '');
 };

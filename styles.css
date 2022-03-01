@@ -1,9 +1,10 @@
 body, html{
   height:100%;
+  overflow: hidden;
 }
 body{
   margin: 0px;
-  background-color:#444;
+  background-color:rgb(68, 68, 68);
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
@@ -12,6 +13,24 @@ body, a:link, a:visited, a:active{
 .title, .addDancerButton{
   padding:5px 12px;
   float:right;
+}
+.button {
+  cursor: pointer;
+}
+.button:hover {
+  background-color: rgb(255, 125, 73);
+}
+.danceFloor {
+  /* display: flex;
+  flex-flow: column; */
+  height: calc(100% - 32px);
+  width: 100%;
+  background-image: url("assets/patioPicture.png");
+  background-size: 100% 100%;
+}
+.lineUpButton{
+  padding:5px 12px;
+  float: left;
 }
 .topbar{
   height:32px;
@@ -27,13 +46,26 @@ body, a:link, a:visited, a:active{
 }
 
 .blinky {
-  border: 10px solid chartreuse
+  /* border: 10px solid chartreuse; */
+  border: none;
+  height: 6rem;
+  width: 6rem;
+  background-image: url("assets/Rowan-Atkinson-Mr.-Bean.png");
+  background-size: 100% 100%;
 }
 
 .social {
-  border: 10px solid blue;
+  border: none;
+  height: 12rem;
+  width: 12rem;
+  background-image: url("assets/giphy.gif");
+  background-size: 100% 100%;
 }
 
 .square {
-  border: 10px solid magenta;
+  border: none;
+  height: 10rem;
+  width: 5rem;
+  background-image: url("assets/snoopdogg.gif");
+  background-size: 100% 100%;
 }
