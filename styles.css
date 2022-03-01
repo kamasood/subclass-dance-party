@@ -25,3 +25,15 @@ body, a:link, a:visited, a:active{
   border-radius:10px;
   position:absolute;
 }
+
+.blinky {
+  border: 10px solid chartreuse
+}
+
+.social {
+  border: 10px solid blue;
+}
+
+.square {
+  border: 10px solid magenta;
+}
